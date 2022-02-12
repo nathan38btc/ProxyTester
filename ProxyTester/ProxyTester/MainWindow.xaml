@@ -1,0 +1,35 @@
+﻿<Window x:Class="ProxyTester.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProxyTester"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.5,0.5">
+        <Button Content="Importer Proxies" HorizontalAlignment="Left" Margin="40,29,0,0" VerticalAlignment="Top" Width="117" Height="35" Click="Button_Click"/>
+        <Label Content="Proxies à tester" HorizontalAlignment="Left" Margin="44,121,0,0" VerticalAlignment="Top" Width="146" RenderTransformOrigin="0.328,0.156"/>
+        <Button Content="Tester les proxies" HorizontalAlignment="Left" Margin="44,330,0,0" VerticalAlignment="Top" Width="123" Height="40"/>
+        <Button Content="Supprimer tous les proxies" HorizontalAlignment="Left" Margin="40,73,0,0" VerticalAlignment="Top" Width="160" Height="39"/>
+        <Label Content="Parramètres" HorizontalAlignment="Left" Margin="475,96,0,0" VerticalAlignment="Top"/>
+        <Button Content="Enregistrer les parramétres" HorizontalAlignment="Left" Margin="482,324,0,0" VerticalAlignment="Top" Width="179" Height="32"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="486,145,0,0" TextWrapping="Wrap" Text="https://www.google.fr/" VerticalAlignment="Top" Width="208"/>
+        <Slider HorizontalAlignment="Left" Margin="489,226,0,0" VerticalAlignment="Top" Height="16" Width="215"/>
+        <TextBlock HorizontalAlignment="Left" Height="18" Margin="483,202,0,0" TextWrapping="Wrap" Text="1ms" VerticalAlignment="Top" Width="52" RenderTransformOrigin="0.45,1.956"/>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="675,204,0,0" TextWrapping="Wrap" Text="1 000ms
+                   " VerticalAlignment="Top" Width="94"/>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="481,179,0,0" TextWrapping="Wrap" Text="Temps de réponse maximal autorisé" VerticalAlignment="Top" Width="252"/>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="479,122,0,0" TextWrapping="Wrap" Text="Url à piger" VerticalAlignment="Top" Width="212"/>
+        <ListView HorizontalAlignment="Left" Height="174" Margin="47,147,0,0" VerticalAlignment="Top" Width="403">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="IP" Width="100"/>
+                    <GridViewColumn Header="PORT" Width="100"/>
+                    <GridViewColumn Header="USER" Width="100"/>
+                    <GridViewColumn Header="PASSWORD" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
