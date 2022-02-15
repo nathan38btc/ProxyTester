@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net;
+using System.IO;
 
 namespace ProxyTester
 {
@@ -20,12 +22,14 @@ namespace ProxyTester
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Proxy> listeProxyIntern = new List<Proxy>();
         public MainWindow()
         {
             InitializeComponent();
         }
         public MainWindow(List<Proxy> listeProxy)
         {
+            listeProxyIntern = listeProxy;
             InitializeComponent();
             proxyTableau.ItemsSource = listeProxy;
         }
@@ -41,6 +45,22 @@ namespace ProxyTester
             MainWindow nouvelleFenetre = new MainWindow();
             nouvelleFenetre.Show();
             this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            foreach(Proxy proxy in listeProxyIntern)
+            {
+                //string url = (string)urlBox.Text; // recuperation de l'url dans la textBox
+
+                //WebRequest wrGETURL = WebRequest.Create(url); // creation de l'objet WebRequest
+
+                //WebProxy myProxy = new WebProxy("myproxy", Convert.ToInt32(proxy.Port));
+                //myProxy.BypassProxyOnLocal = true;
+
+                // wrGETURL.Proxy = myProxy;  // on utilise le proxy créé pour la requete
+
+            }
         }
     }
 }
