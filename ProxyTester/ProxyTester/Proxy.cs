@@ -6,24 +6,23 @@ using System.Threading.Tasks;
 
 namespace ProxyTester
 {
-    class Proxy
+    public class Proxy
     {
         #region attributs
         private string ip;
         private string port;
-        private string adresse;
+        private string user;
         private string password;
         #endregion
 
         #region constructor
 
-        public Proxy(string donneesProxy)
+        public Proxy(string ip,string port,string user,string password)
         {
-            string[] DonneeExploitable = donneesProxy.Split(';');
-            this.ip = DonneeExploitable[0];
-            this.port = DonneeExploitable[1];
-            this.adresse = DonneeExploitable[2];
-            this.password = DonneeExploitable[3];
+            this.ip = ip;
+            this.port = port;
+            this.user = user;
+            this.password = password;
         }
         #endregion
 
@@ -40,10 +39,10 @@ namespace ProxyTester
             set { port = value; }
         }
 
-        public string Adresse
+        public string User
         {
-            get { return adresse; }
-            set { adresse = value; }
+            get { return user; }
+            set { user = value; }
         }
 
         public string Password

@@ -10,7 +10,7 @@
         <Button Content="Importer Proxies" HorizontalAlignment="Left" Margin="40,29,0,0" VerticalAlignment="Top" Width="117" Height="35" Click="Button_Click"/>
         <Label Content="Proxies à tester" HorizontalAlignment="Left" Margin="44,121,0,0" VerticalAlignment="Top" Width="146" RenderTransformOrigin="0.328,0.156"/>
         <Button Content="Tester les proxies" HorizontalAlignment="Left" Margin="44,330,0,0" VerticalAlignment="Top" Width="123" Height="40"/>
-        <Button Content="Supprimer tous les proxies" HorizontalAlignment="Left" Margin="40,73,0,0" VerticalAlignment="Top" Width="160" Height="39"/>
+        <Button Content="Supprimer tous les proxies" HorizontalAlignment="Left" Margin="40,73,0,0" VerticalAlignment="Top" Width="160" Height="39" Click="Button_Click_1"/>
         <Label Content="Parramètres" HorizontalAlignment="Left" Margin="475,96,0,0" VerticalAlignment="Top"/>
         <Button Content="Enregistrer les parramétres" HorizontalAlignment="Left" Margin="482,324,0,0" VerticalAlignment="Top" Width="179" Height="32"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="486,145,0,0" TextWrapping="Wrap" Text="https://www.google.fr/" VerticalAlignment="Top" Width="208"/>
@@ -20,13 +20,13 @@
                    " VerticalAlignment="Top" Width="94"/>
         <TextBlock HorizontalAlignment="Left" Height="19" Margin="481,179,0,0" TextWrapping="Wrap" Text="Temps de réponse maximal autorisé" VerticalAlignment="Top" Width="252"/>
         <TextBlock HorizontalAlignment="Left" Height="19" Margin="479,122,0,0" TextWrapping="Wrap" Text="Url à piger" VerticalAlignment="Top" Width="212"/>
-        <ListView HorizontalAlignment="Left" Height="174" Margin="47,147,0,0" VerticalAlignment="Top" Width="403">
+        <ListView x:Name="proxyTableau" HorizontalAlignment="Left" Height="174" Margin="47,147,0,0" VerticalAlignment="Top" Width="403">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="IP" Width="100"/>
-                    <GridViewColumn Header="PORT" Width="100"/>
-                    <GridViewColumn Header="USER" Width="100"/>
-                    <GridViewColumn Header="PASSWORD" Width="100"/>
+                    <GridViewColumn Header="IP" Width="100" DisplayMemberBinding="{Binding Ip, Mode=TwoWay}"/>
+                    <GridViewColumn Header="PORT" Width="100" DisplayMemberBinding="{Binding Port, Mode=TwoWay}"/>
+                    <GridViewColumn Header="USER" Width="100" DisplayMemberBinding="{Binding User, Mode=TwoWay}"/>
+                    <GridViewColumn Header="PASSWORD" Width="100" DisplayMemberBinding="{Binding Password, Mode=TwoWay}"/>
                 </GridView>
             </ListView.View>
         </ListView>

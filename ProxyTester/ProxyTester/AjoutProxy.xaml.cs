@@ -19,16 +19,26 @@ namespace ProxyTester
     /// </summary>
     public partial class AjoutProxy : Window
     {
-        private List<string> listeProxy = new List<string>();
-        public AjoutProxy(List<string> listeProxy)
+        public AjoutProxy()
         {
-            this.listeProxy = listeProxy;
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            string proxyEnTexte = (string)proxyTexte.Text;
+            List<string> proxyEnLigne = proxyEnTexte.Split('\n').ToList();
+            List<Proxy> proxyEnListe = new List<Proxy>();
 
+            foreach (string ligne in proxyEnLigne)
+            {
+                string[] DonneeExploitable = ligne.Split(';');
+                Proxy nouveauProxy = new Proxy(DonneeExploitable[0], DonneeExploitable[1], DonneeExploitable[2], DonneeExploitable[3]);
+                proxyEnListe.Add(nouveauProxy);
+            }
+            
+            MainWindow retourAuMain = new MainWindow(proxyEnListe);
+            retourAuMain.Show();
             this.Close();
         }
     }

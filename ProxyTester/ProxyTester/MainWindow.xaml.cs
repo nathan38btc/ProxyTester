@@ -20,17 +20,27 @@ namespace ProxyTester
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<string> listeProxy = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        public MainWindow(List<Proxy> listeProxy)
+        {
+            InitializeComponent();
+            proxyTableau.ItemsSource = listeProxy;
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AjoutProxy newWindow = new AjoutProxy(this.listeProxy);
+            AjoutProxy newWindow = new AjoutProxy();
             Window.GetWindow(newWindow).Show();
+            this.Close();
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow nouvelleFenetre = new MainWindow();
+            nouvelleFenetre.Show();
+            this.Close();
+        }
     }
 }
