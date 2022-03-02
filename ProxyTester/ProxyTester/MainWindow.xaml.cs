@@ -42,27 +42,21 @@ namespace ProxyTester
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            // recuperation des parametres
-            int tempsRepMax = Convert.ToInt32(TempsdeReponse.Text);
+            int tempsRepMax = Convert.ToInt32(TempsdeReponse.Text);  // récuperation des parametres
             string url = (string)urlBox.Text;
             string[] TableauTempsDeRep = new string[listeProxyIntern.Count];
-            foreach (Proxy proxy in listeProxyIntern)
+
+            foreach (Proxy proxy in listeProxyIntern)  // à modifier pour parralléliser les éxecutions 
             {
-
-                WebRequest wrGETURL = WebRequest.Create(url); // création de l'objet WebRequest
-                string proxyAdresse = "https://" + proxy.User + ":" + proxy.Password + "@" + proxy.Ip + ":" + proxy.Port;
-                WebProxy myProxy = new WebProxy(proxyAdresse);
-                myProxy.BypassProxyOnLocal = true;
-
-                wrGETURL.Proxy = myProxy;  // on utilise le proxy créé pour la requete
 
                 Stopwatch sw = new Stopwatch();      // chrono de mesure du temps d'éxecution
 
                 sw.Start();
 
-                Stream objStream = wrGETURL.GetResponse().GetResponseStream();
+                bool rep = Proxy.TestProxy(url, proxy);
 
                 sw.Stop();
+
                 TimeSpan ts = sw.Elapsed;
                 string tempsDeReponse = string.Format("{0:00}", ts.Milliseconds);
 

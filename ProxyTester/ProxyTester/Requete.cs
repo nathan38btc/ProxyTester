@@ -26,17 +26,5 @@ namespace ProxyTester
 
         }
 
-        #region fonction
-        public int Creation(string url)
-        {
-            HttpWebRequest webrequest = (HttpWebRequest)WebRequest.CreateHttp(url);
-            IWebProxy proxyy = new MyProxy(new Uri("http://xx.xx.xx.xxx:xxxx"))
-            {
-                Credentials = new NetworkCredential("xxxx", "xxxx")
-            };
-            webrequest.Proxy = proxyy;
-
-        }
-        #endregion
     }
 }

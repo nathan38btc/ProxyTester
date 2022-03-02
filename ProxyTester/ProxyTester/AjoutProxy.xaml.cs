@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Net;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -33,7 +34,11 @@ namespace ProxyTester
             foreach (string ligne in proxyEnLigne)
             {
                 string[] DonneeExploitable = ligne.Split(':');
-                Proxy nouveauProxy = new Proxy(DonneeExploitable[0], DonneeExploitable[1], DonneeExploitable[2], DonneeExploitable[3]);
+                string ipStr = DonneeExploitable[0];
+                string portStr = DonneeExploitable[1];
+                IPAddress ip;
+                IPAddress.TryParse(ipStr, out ip);
+                Proxy nouveauProxy = new Proxy(new IPEndPoint(ip, int.Parse(portStr)), DonneeExploitable[2], DonneeExploitable[3]);
                 proxyEnListe.Add(nouveauProxy);
             }
             
