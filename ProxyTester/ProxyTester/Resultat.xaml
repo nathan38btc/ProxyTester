@@ -1,0 +1,29 @@
+﻿<Window x:Class="ProxyTester.Resultat"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProxyTester"
+        mc:Ignorable="d"
+        Title="Resultat" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="proxyTableau2" HorizontalAlignment="Left" Height="385" Margin="21,19,0,0" VerticalAlignment="Top" Width="400">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="IP" Width="100" DisplayMemberBinding="{Binding Ip, Mode=TwoWay}"/>
+                    <GridViewColumn Header="PORT" Width="100" DisplayMemberBinding="{Binding Port, Mode=TwoWay}"/>
+                    <GridViewColumn Header="USER" Width="100" DisplayMemberBinding="{Binding User, Mode=TwoWay}"/>
+                    <GridViewColumn Header="PASSWORD" Width="100" DisplayMemberBinding="{Binding Password, Mode=TwoWay}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="TableauTemps" HorizontalAlignment="Left" Height="381" Margin="432,20,0,0" VerticalAlignment="Top" Width="103">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Temps de réponse (ms)" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>

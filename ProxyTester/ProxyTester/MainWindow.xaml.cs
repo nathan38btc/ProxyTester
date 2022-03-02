@@ -1,19 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Net;
+// bibliotheque pour le temps
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
+// ajout des bibliothèque pour les requetes web
+using System.Net;
+using System.Windows;
 
 namespace ProxyTester
 {
@@ -49,18 +42,36 @@ namespace ProxyTester
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            foreach(Proxy proxy in listeProxyIntern)
+            // recuperation des parametres
+            int tempsRepMax = Convert.ToInt32(TempsdeReponse.Text);
+            string url = (string)urlBox.Text;
+            string[] TableauTempsDeRep = new string[listeProxyIntern.Count];
+            foreach (Proxy proxy in listeProxyIntern)
             {
-                //string url = (string)urlBox.Text; // recuperation de l'url dans la textBox
 
-                //WebRequest wrGETURL = WebRequest.Create(url); // creation de l'objet WebRequest
+                WebRequest wrGETURL = WebRequest.Create(url); // création de l'objet WebRequest
+                string proxyAdresse = "https://" + proxy.User + ":" + proxy.Password + "@" + proxy.Ip + ":" + proxy.Port;
+                WebProxy myProxy = new WebProxy(proxyAdresse);
+                myProxy.BypassProxyOnLocal = true;
 
-                //WebProxy myProxy = new WebProxy("myproxy", Convert.ToInt32(proxy.Port));
-                //myProxy.BypassProxyOnLocal = true;
+                wrGETURL.Proxy = myProxy;  // on utilise le proxy créé pour la requete
 
-                // wrGETURL.Proxy = myProxy;  // on utilise le proxy créé pour la requete
+                Stopwatch sw = new Stopwatch();      // chrono de mesure du temps d'éxecution
 
+                sw.Start();
+
+                Stream objStream = wrGETURL.GetResponse().GetResponseStream();
+
+                sw.Stop();
+                TimeSpan ts = sw.Elapsed;
+                string tempsDeReponse = string.Format("{0:00}", ts.Milliseconds);
+
+                TableauTempsDeRep.Append(tempsDeReponse);
             }
+
+            Resultat FeneResultat = new Resultat(listeProxyIntern, TableauTempsDeRep);
+            FeneResultat.Show();
+
         }
     }
 }

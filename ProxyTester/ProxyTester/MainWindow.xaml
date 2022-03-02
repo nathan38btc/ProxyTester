@@ -14,11 +14,7 @@
         <Label Content="Parramètres" HorizontalAlignment="Left" Margin="475,96,0,0" VerticalAlignment="Top"/>
         <Button Content="Enregistrer les parramétres" HorizontalAlignment="Left" Margin="482,324,0,0" VerticalAlignment="Top" Width="179" Height="32"/>
         <TextBox x:Name="urlBox" HorizontalAlignment="Left" Height="23" Margin="486,145,0,0" TextWrapping="Wrap" Text="https://www.google.fr/" VerticalAlignment="Top" Width="208"/>
-        <Slider HorizontalAlignment="Left" Margin="489,226,0,0" VerticalAlignment="Top" Height="16" Width="215"/>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="483,202,0,0" TextWrapping="Wrap" Text="1ms" VerticalAlignment="Top" Width="52" RenderTransformOrigin="0.45,1.956"/>
-        <TextBlock HorizontalAlignment="Left" Height="19" Margin="675,204,0,0" TextWrapping="Wrap" Text="1 000ms
-                   " VerticalAlignment="Top" Width="94"/>
-        <TextBlock HorizontalAlignment="Left" Height="19" Margin="481,179,0,0" TextWrapping="Wrap" Text="Temps de réponse maximal autorisé" VerticalAlignment="Top" Width="252"/>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="481,196,0,0" TextWrapping="Wrap" Text="Temps de réponse maximal autorisé" VerticalAlignment="Top" Width="252"/>
         <TextBlock HorizontalAlignment="Left" Height="19" Margin="479,122,0,0" TextWrapping="Wrap" Text="Url à piger" VerticalAlignment="Top" Width="212"/>
         <ListView x:Name="proxyTableau" HorizontalAlignment="Left" Height="174" Margin="47,147,0,0" VerticalAlignment="Top" Width="403">
             <ListView.View>
@@ -30,6 +26,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <TextBox x:Name="TempsdeReponse" HorizontalAlignment="Left" Height="22" Margin="484,227,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="94"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="586,229,0,0" TextWrapping="Wrap" Text="ms" VerticalAlignment="Top" Width="85"/>
 
     </Grid>
 </Window>

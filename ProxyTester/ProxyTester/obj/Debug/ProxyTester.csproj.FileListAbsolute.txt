@@ -32,3 +32,5 @@ C:\Users\nathm\Documents\GitHub\ProxyTester\ProxyTester\ProxyTester\obj\Debug\Pr
 C:\Users\nathm\Documents\GitHub\ProxyTester\ProxyTester\ProxyTester\obj\Debug\ProxyTester.csproj.CoreCompileInputs.cache
 C:\Users\nathm\Documents\GitHub\ProxyTester\ProxyTester\ProxyTester\obj\Debug\ProxyTester.exe
 C:\Users\nathm\Documents\GitHub\ProxyTester\ProxyTester\ProxyTester\obj\Debug\ProxyTester.pdb
+C:\Users\nathm\Documents\GitHub\ProxyTester\ProxyTester\ProxyTester\obj\Debug\Resultat.g.cs
+C:\Users\nathm\Documents\GitHub\ProxyTester\ProxyTester\ProxyTester\obj\Debug\Resultat.baml

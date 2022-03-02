@@ -32,7 +32,7 @@ namespace ProxyTester
 
             foreach (string ligne in proxyEnLigne)
             {
-                string[] DonneeExploitable = ligne.Split(';');
+                string[] DonneeExploitable = ligne.Split(':');
                 Proxy nouveauProxy = new Proxy(DonneeExploitable[0], DonneeExploitable[1], DonneeExploitable[2], DonneeExploitable[3]);
                 proxyEnListe.Add(nouveauProxy);
             }
