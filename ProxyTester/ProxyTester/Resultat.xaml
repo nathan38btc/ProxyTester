@@ -7,23 +7,24 @@
         mc:Ignorable="d"
         Title="Resultat" Height="450" Width="800">
     <Grid>
-        <ListView x:Name="proxyTableau2" HorizontalAlignment="Left" Height="385" Margin="21,19,0,0" VerticalAlignment="Top" Width="400">
+        <ListView x:Name="proxyTableau2" HorizontalAlignment="Left" Height="288" Margin="21,19,0,0" VerticalAlignment="Top" Width="603">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="IP" Width="100" DisplayMemberBinding="{Binding Ip, Mode=TwoWay}"/>
-                    <GridViewColumn Header="PORT" Width="100" DisplayMemberBinding="{Binding Port, Mode=TwoWay}"/>
+                    <GridViewColumn Header="Addresse" Width="350" DisplayMemberBinding="{Binding Addresse, Mode=TwoWay}"/>
                     <GridViewColumn Header="USER" Width="100" DisplayMemberBinding="{Binding User, Mode=TwoWay}"/>
                     <GridViewColumn Header="PASSWORD" Width="100" DisplayMemberBinding="{Binding Password, Mode=TwoWay}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView x:Name="TableauTemps" HorizontalAlignment="Left" Height="381" Margin="432,20,0,0" VerticalAlignment="Top" Width="103">
+        <ListView x:Name="TableauTemps" HorizontalAlignment="Left" Height="288" Margin="643,21,0,0" VerticalAlignment="Top" Width="127">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Temps de réponse (ms)" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Exporter : Proxy fonctionnels" HorizontalAlignment="Left" Height="66" Margin="61,321,0,0" VerticalAlignment="Top" Width="235"/>
+        <Button Content="Exporter : Proxy non fonctionels" HorizontalAlignment="Left" Height="70" Margin="391,320,0,0" VerticalAlignment="Top" Width="224"/>
 
     </Grid>
 </Window>

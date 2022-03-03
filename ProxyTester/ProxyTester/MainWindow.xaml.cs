@@ -44,7 +44,7 @@ namespace ProxyTester
         {
             int tempsRepMax = Convert.ToInt32(TempsdeReponse.Text);  // récuperation des parametres
             string url = (string)urlBox.Text;
-            string[] TableauTempsDeRep = new string[listeProxyIntern.Count];
+            List<string> TableauTempsDeRep = new List<string>();
 
             foreach (Proxy proxy in listeProxyIntern)  // à modifier pour parralléliser les éxecutions 
             {
@@ -58,9 +58,9 @@ namespace ProxyTester
                 sw.Stop();
 
                 TimeSpan ts = sw.Elapsed;
-                string tempsDeReponse = string.Format("{0:00}", ts.Milliseconds);
+                string tempsDeReponse = ts.Milliseconds.ToString();
 
-                TableauTempsDeRep.Append(tempsDeReponse);
+                TableauTempsDeRep.Add(tempsDeReponse);
             }
 
             Resultat FeneResultat = new Resultat(listeProxyIntern, TableauTempsDeRep);

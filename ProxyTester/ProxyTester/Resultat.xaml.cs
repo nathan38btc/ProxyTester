@@ -19,7 +19,7 @@ namespace ProxyTester
     /// </summary>
     public partial class Resultat : Window
     {
-        public Resultat(List<Proxy> listeProxy,string[] TableauTempsDeRep)
+        public Resultat(List<Proxy> listeProxy,List<string> TableauTempsDeRep)
         {
             InitializeComponent();
             proxyTableau2.ItemsSource = listeProxy;
