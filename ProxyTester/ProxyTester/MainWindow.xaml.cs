@@ -63,9 +63,10 @@ namespace ProxyTester
                 TableauTempsDeRep.Add(tempsDeReponse);
             }
 
-            Resultat FeneResultat = new Resultat(listeProxyIntern, TableauTempsDeRep);
+            Resultat FeneResultat = new Resultat(listeProxyIntern, TableauTempsDeRep, tempsRepMax);
             FeneResultat.Show();
 
         }
+
     }
 }

@@ -10,6 +10,8 @@ namespace ProxyTester
     public class Proxy
     {
         #region attributs
+        private string ip;
+        private string port;
         private string user;
         private string password;
         private string addresse;
@@ -17,8 +19,10 @@ namespace ProxyTester
 
         #region constructor
 
-        public Proxy(string addresse,string user,string password)
+        public Proxy(string ip,string port,string addresse,string user,string password)
         {
+            this.ip = ip;
+            this.port = port;
             this.addresse = addresse;
             this.user = user;
             this.password = password;
@@ -27,6 +31,16 @@ namespace ProxyTester
 
         #region Properties
 
+        public string Ip
+        {
+            get { return ip; }
+            set { ip = value; }
+        }
+        public string Port
+        {
+            get { return port; }
+            set { port = value; }
+        }
         public string User
         {
             get { return user; }
@@ -67,6 +81,12 @@ namespace ProxyTester
             return true;
         }
 
+        public override string ToString()
+        {
+
+            return this.Ip + ":" +this.Port+":"+ this.User + ":" + this.Password;
+
+        }
         #endregion
     }
 }

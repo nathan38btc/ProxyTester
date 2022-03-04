@@ -12,10 +12,9 @@
         <Button Content="Tester les proxies" HorizontalAlignment="Left" Margin="44,366,0,0" VerticalAlignment="Top" Width="726" Height="40" Click="Button_Click_2"/>
         <Button Content="Supprimer tous les proxies" HorizontalAlignment="Left" Margin="40,73,0,0" VerticalAlignment="Top" Width="160" Height="39" Click="Button_Click_1"/>
         <Label Content="Parramètres" HorizontalAlignment="Left" Margin="289,4,0,0" VerticalAlignment="Top"/>
-        <Button Content="Enregistrer les parramétres" HorizontalAlignment="Left" Margin="294,114,0,0" VerticalAlignment="Top" Width="179" Height="32"/>
-        <TextBox x:Name="urlBox" HorizontalAlignment="Left" Height="23" Margin="294,45,0,0" TextWrapping="Wrap" Text="https://www.google.fr/" VerticalAlignment="Top" Width="208"/>
-        <TextBlock HorizontalAlignment="Left" Height="19" Margin="297,68,0,0" TextWrapping="Wrap" Text="Temps de réponse maximal autorisé" VerticalAlignment="Top" Width="252"/>
-        <TextBlock HorizontalAlignment="Left" Height="19" Margin="297,24,0,0" TextWrapping="Wrap" Text="Url à piger" VerticalAlignment="Top" Width="212"/>
+        <TextBox x:Name="urlBox" HorizontalAlignment="Left" Height="23" Margin="324,62,0,0" TextWrapping="Wrap" Text="https://www.google.fr/" VerticalAlignment="Top" Width="208"/>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="324,84,0,0" TextWrapping="Wrap" Text="Temps de réponse maximal autorisé" VerticalAlignment="Top" Width="252"/>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="326,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"><Run Text="Url à pi"/><Run Text="n"/><Run Text="g"/></TextBlock>
         <ListView x:Name="proxyTableau" HorizontalAlignment="Left" Height="210" Margin="47,147,0,0" VerticalAlignment="Top" Width="720">
             <ListView.View>
                 <GridView>
@@ -25,8 +24,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox x:Name="TempsdeReponse" HorizontalAlignment="Left" Height="22" Margin="298,87,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="94"/>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="403,87,0,0" TextWrapping="Wrap" Text="ms" VerticalAlignment="Top" Width="85"/>
+        <TextBox x:Name="TempsdeReponse" HorizontalAlignment="Left" Height="22" Margin="326,105,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="94"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="428,105,0,0" TextWrapping="Wrap" Text="ms" VerticalAlignment="Top" Width="85"/>
 
     </Grid>
 </Window>
