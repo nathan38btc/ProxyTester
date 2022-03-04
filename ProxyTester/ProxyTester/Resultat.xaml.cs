@@ -26,6 +26,9 @@ namespace ProxyTester
             TableauTemps.ItemsSource = TableauTempsDeRep;
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

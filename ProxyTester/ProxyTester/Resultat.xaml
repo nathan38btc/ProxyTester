@@ -23,7 +23,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Exporter : Proxy fonctionnels" HorizontalAlignment="Left" Height="66" Margin="61,321,0,0" VerticalAlignment="Top" Width="235"/>
+        <Button Content="Exporter : Proxy fonctionnels" HorizontalAlignment="Left" Height="66" Margin="61,321,0,0" VerticalAlignment="Top" Width="235" Click="Button_Click"/>
         <Button Content="Exporter : Proxy non fonctionels" HorizontalAlignment="Left" Height="70" Margin="391,320,0,0" VerticalAlignment="Top" Width="224"/>
 
     </Grid>
