@@ -27,7 +27,7 @@ namespace ProxyTester
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string proxyEnTexte = (string)proxyTexte.Text;
+            string proxyEnTexte = (string)proxyTexte.Text;  //recupération des proxys en texte et transformation en objet Proxy
             List<string> proxyEnLigne = proxyEnTexte.Split('\n').ToList();
             List<Proxy> proxyEnListe = new List<Proxy>();
 
@@ -40,6 +40,13 @@ namespace ProxyTester
             }
             
             MainWindow retourAuMain = new MainWindow(proxyEnListe);
+            retourAuMain.Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow retourAuMain = new MainWindow();
             retourAuMain.Show();
             this.Close();
         }

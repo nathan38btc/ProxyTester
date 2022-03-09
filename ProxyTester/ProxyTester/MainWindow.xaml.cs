@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 // ajout des bibliothèque pour les requetes web
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace ProxyTester
@@ -45,10 +46,11 @@ namespace ProxyTester
             int tempsRepMax = Convert.ToInt32(TempsdeReponse.Text);  // récuperation des parametres
             string url = (string)urlBox.Text;
             List<string> TableauTempsDeRep = new List<string>();
-
+            
             foreach (Proxy proxy in listeProxyIntern)  // à modifier pour parralléliser les éxecutions 
             {
 
+                string tempsDeReponse = "Echec";
                 Stopwatch sw = new Stopwatch();      // chrono de mesure du temps d'éxecution
 
                 sw.Start();
@@ -58,7 +60,11 @@ namespace ProxyTester
                 sw.Stop();
 
                 TimeSpan ts = sw.Elapsed;
-                string tempsDeReponse = ts.Milliseconds.ToString();
+
+                if (rep == true)
+                {
+                    tempsDeReponse = ts.Milliseconds.ToString();
+                }
 
                 TableauTempsDeRep.Add(tempsDeReponse);
             }

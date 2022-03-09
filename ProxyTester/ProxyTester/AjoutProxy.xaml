@@ -8,7 +8,8 @@
         Title="AjoutProxy" Height="450" Width="800">
     <Grid>
         <TextBox x:Name="proxyTexte" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="338" Margin="57,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="441"/>
-        <Button Content="Soumettre" HorizontalAlignment="Left" Margin="569,294,0,0" VerticalAlignment="Top" Width="161" Height="60" Click="Button_Click"/>
+        <Button Content="Soumettre" HorizontalAlignment="Left" Margin="570,193,0,0" VerticalAlignment="Top" Width="161" Height="60" Click="Button_Click"/>
+        <Button Content="Retour" HorizontalAlignment="Left" Height="57" Margin="568,307,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click_1"/>
 
     </Grid>
 </Window>
