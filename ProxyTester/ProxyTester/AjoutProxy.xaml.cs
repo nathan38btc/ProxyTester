@@ -34,7 +34,7 @@ namespace ProxyTester
             foreach (string ligne in proxyEnLigne)
             {
                 string[] DonneeExploitable = ligne.Split(':');
-                string addresse = "http://"+ DonneeExploitable[2]+":" + DonneeExploitable[3]+"@"+DonneeExploitable[0]+DonneeExploitable[1];
+                string addresse = "http://"+ DonneeExploitable[2]+":" + DonneeExploitable[3]+"@"+DonneeExploitable[0] + ":" + DonneeExploitable[1];
                 Proxy nouveauProxy = new Proxy(DonneeExploitable[0], DonneeExploitable[1],addresse, DonneeExploitable[2], DonneeExploitable[3]);
                 proxyEnListe.Add(nouveauProxy);
             }

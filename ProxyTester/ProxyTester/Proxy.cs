@@ -65,15 +65,17 @@ namespace ProxyTester
         {
             
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Proxy = new WebProxy(proxy.Addresse);
-            request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36";
+
+            var loProxy = new WebProxy(proxy.Addresse, true);
+            loProxy.Credentials = new NetworkCredential(proxy.User,proxy.Password);
+            request.Proxy = loProxy;
+
+            request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36";
             request.Timeout = 2000;
-            ICredentials credentials = new NetworkCredential(proxy.User, proxy.Password);
-            request.Proxy.Credentials = credentials;
 
             try
             {
-                HttpWebResponse reponse = (HttpWebResponse)request.GetResponse();
+                WebResponse reponse = request.GetResponse();
             }
             catch (Exception)
             {

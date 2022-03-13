@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Threading;
 
 namespace ProxyTester
 {
@@ -49,7 +50,7 @@ namespace ProxyTester
             
             foreach (Proxy proxy in listeProxyIntern)  // à modifier pour parralléliser les éxecutions 
             {
-
+                
                 string tempsDeReponse = "Echec";
                 Stopwatch sw = new Stopwatch();      // chrono de mesure du temps d'éxecution
 
