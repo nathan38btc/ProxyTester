@@ -51,7 +51,7 @@ namespace ProxyTester
             foreach (Proxy proxy in listeProxyIntern)  // à modifier pour parralléliser les éxecutions 
             {
                 
-                string tempsDeReponse = "Echec";
+                string tempsDeReponse = "-1";
                 Stopwatch sw = new Stopwatch();      // chrono de mesure du temps d'éxecution
 
                 sw.Start();
