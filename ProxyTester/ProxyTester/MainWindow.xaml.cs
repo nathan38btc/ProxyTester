@@ -42,21 +42,37 @@ namespace ProxyTester
             this.Close();
         }
 
+        public static bool ExecuteWithTimeLimit(TimeSpan timeSpan, Action codeBlock)
+        {
+            try
+            {
+                Task task = Task.Factory.StartNew(() => codeBlock());
+                task.Wait(timeSpan);
+                return task.IsCompleted;
+            }
+            catch (AggregateException ae)
+            {
+                throw ae.InnerExceptions[0];
+            }
+        }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             int tempsRepMax = Convert.ToInt32(TempsdeReponse.Text);  // récuperation des parametres
             string url = (string)urlBox.Text;
             List<string> TableauTempsDeRep = new List<string>();
-            
+
             foreach (Proxy proxy in listeProxyIntern)  // à modifier pour parralléliser les éxecutions 
             {
-                
+
                 string tempsDeReponse = "-1";
                 Stopwatch sw = new Stopwatch();      // chrono de mesure du temps d'éxecution
 
                 sw.Start();
 
-                bool rep = Proxy.TestProxy(url, proxy);
+                bool rep = ExecuteWithTimeLimit(TimeSpan.FromMilliseconds(tempsRepMax), () =>
+                {
+                    Proxy.TestProxy(url, proxy);
+                });
 
                 sw.Stop();
 
@@ -74,6 +90,8 @@ namespace ProxyTester
             FeneResultat.Show();
 
         }
+
+
 
     }
 }
